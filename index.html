@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>HAIII CANTIKKK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .box {
+    background: white;
+    padding: 30px;
+    max-width: 400px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .slide {
+    display: none;
+  }
+  .slide.active {
+    display: block;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <div class="slide active">
+    <h2>Hai kamu, iya kamu</h2>
+    <p>Ini sebenarnya hanya web sederhana, btw, kamu lucu bangettt loh.</p>
+    <button onclick="nextSlide()">Lanjut</button>
+  </div>
+
+  <div class="slide">
+    <h2>Sedikit Cerita</h2>
+    <p>Baru kali ini, aku benar-benar ingin memelajari banyak hal, untuk menyampaikan bahwa kamu orang yang sangat layak untuk dicintai.</p>
+    <button onclick="nextSlide()">Lanjut</button>
+  </div>
+
+  <div class="slide">
+    <h2>Terakhir</h2>
+    <p>Terima kasih sudah membaca sampai sini, jangan lupa bahwa aku akan selalu ada di sini, walaupun kadang cringe dan alay.</p>
+  </div>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+
+function nextSlide() {
+  slides[current].classList.remove('active');
+  current++;
+  if (current >= slides.length) current = slides.length - 1;
+  slides[current].classList.add('active');
+}
+</script>
+
+</body>
+</html>
